@@ -25,9 +25,11 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.LinearGradient
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -39,13 +41,21 @@ import java.nio.file.WatchEvent
 
 @Composable
 fun HomeScreen() {
+    val gradient = Brush.linearGradient(colors = listOf(Color.Red,Color.Yellow, Color.Green))
     Box(
         contentAlignment = Center,
         modifier = Modifier.fillMaxSize()
     ) {
         AsyncImage(
-            model = "https://developer.android.com/images/android-go/next-billion-users_856.png",
-            contentDescription = null
+            model = "https://static.tildacdn.com/tild6531-6334-4461-b235-643034643533/Jennifer-Lopez-2019-.jpg",
+            contentDescription = null,
+            modifier = Modifier
+                .width(260.dp)
+                .height(260.dp)
+                .clip(CircleShape)
+                .border(4.dp, gradient, CircleShape)
+                .border(10.dp, Color.White, CircleShape),
+            contentScale = ContentScale.Crop
         )
     }
 }
