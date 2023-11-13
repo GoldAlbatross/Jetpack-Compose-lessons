@@ -21,7 +21,9 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Alignment.Companion.Start
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.LinearGradient
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,8 +43,9 @@ fun HomeScreen(list: List<String>) {
                     .width(160.dp)
                     .height(120.dp)
                     .background(
-                        color = Color.Cyan,
-                        shape = CutCornerShape(16.dp)
+                        brush = Brush.linearGradient(colors = listOf(Color.Red,Color.Yellow, Color.Green)),
+                        alpha = 0.2f,
+                        shape = RoundedCornerShape(16.dp)
                     )
             )
         }
