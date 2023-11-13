@@ -1,5 +1,6 @@
 package com.lessons.jetpackcompose
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -14,6 +15,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -26,47 +28,31 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.LinearGradient
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import java.nio.file.WatchEvent
 
 @Composable
-fun HomeScreen(list: List<String>) {
-    if (list.isEmpty()) {
-        Box(
-            contentAlignment = Center,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Box(
-                modifier = Modifier
-                    .width(160.dp)
-                    .height(120.dp)
-                    .border(
-                        width = 4.dp,
-                        brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow, Color.Green)),
-                        shape = RoundedCornerShape(16.dp),
-                    )
-                    .background(
-                        color = Color.DarkGray,
-                        shape = RoundedCornerShape(16.dp),
-                    )
-
-            )
-        }
-    } else {
-        Column {
-            for (s in list) {
-                Text(text = s)
-            }
-        }
+fun HomeScreen() {
+    Box(
+        contentAlignment = Center,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        AsyncImage(
+            model = "https://developer.android.com/images/android-go/next-billion-users_856.png",
+            contentDescription = null
+        )
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen(listOf())
+    HomeScreen()
 }
