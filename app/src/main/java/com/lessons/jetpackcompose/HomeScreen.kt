@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -39,11 +38,11 @@ fun HomeScreen(list: List<String>) {
         ) {
             Box(
                 modifier = Modifier
-                    .width(120.dp)
+                    .width(160.dp)
                     .height(120.dp)
                     .background(
                         color = Color.Cyan,
-                        shape = CircleShape
+                        shape = CutCornerShape(16.dp)
                     )
             )
         }
