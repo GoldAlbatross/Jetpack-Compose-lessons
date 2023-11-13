@@ -1,6 +1,7 @@
 package com.lessons.jetpackcompose
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,10 +43,10 @@ fun HomeScreen(list: List<String>) {
                 modifier = Modifier
                     .width(160.dp)
                     .height(120.dp)
-                    .background(
-                        brush = Brush.linearGradient(colors = listOf(Color.Red,Color.Yellow, Color.Green)),
-                        alpha = 0.2f,
-                        shape = RoundedCornerShape(16.dp)
+                    .border(
+                        width = 2.dp,
+                        brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow, Color.Green)),
+                        shape = RoundedCornerShape(16.dp),
                     )
             )
         }
