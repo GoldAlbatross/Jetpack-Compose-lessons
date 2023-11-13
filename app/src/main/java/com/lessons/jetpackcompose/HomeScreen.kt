@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -44,10 +45,15 @@ fun HomeScreen(list: List<String>) {
                     .width(160.dp)
                     .height(120.dp)
                     .border(
-                        width = 2.dp,
+                        width = 4.dp,
                         brush = Brush.linearGradient(listOf(Color.Red, Color.Yellow, Color.Green)),
                         shape = RoundedCornerShape(16.dp),
                     )
+                    .background(
+                        color = Color.DarkGray,
+                        shape = RoundedCornerShape(16.dp),
+                    )
+
             )
         }
     } else {
