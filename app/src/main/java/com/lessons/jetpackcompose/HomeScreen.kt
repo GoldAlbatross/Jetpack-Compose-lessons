@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -33,7 +35,12 @@ fun HomeScreen(list: List<String>) {
             contentAlignment = Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            Text(text = "Empty screen")
+            Box(
+                modifier = Modifier
+                    .width(160.dp)
+                    .height(120.dp)
+                    .background(color = Color.Cyan, shape = RoundedCornerShape(16.dp))
+            )
         }
     } else {
         Column {
