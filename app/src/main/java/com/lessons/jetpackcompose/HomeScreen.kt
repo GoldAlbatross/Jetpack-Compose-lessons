@@ -8,12 +8,11 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun HomeScreen(
-    count: State<Int>,
+    count: Int,
     counter: () -> Unit,
 ) {
-    val counterValue = count.value
     Text(
-        text = "Clicks: $counterValue",
+        text = "Clicks: $count",
         modifier = Modifier.clickable(onClick = { counter() })
     )
 }
